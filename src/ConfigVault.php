@@ -1,5 +1,5 @@
 <?php
-//----------------------------------------------------------------------------------------------------------------------
+
 namespace SetBased\Abc\ConfigVault;
 
 /**
@@ -19,7 +19,7 @@ interface ConfigVault
    *
    * @return mixed
    */
-  public function getValue($domain, $key = null);
+  public function getValue(string $domain, ?string $key = null);
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
@@ -32,7 +32,7 @@ interface ConfigVault
    *
    * @return void
    */
-  public function putValue($domain, $key, $value);
+  public function putValue(string $domain, ?string $key, $value): void;
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
@@ -43,7 +43,7 @@ interface ConfigVault
    *
    * @return void
    */
-  public function unset($domain, $key = null);
+  public function unset(string $domain, ?string $key = null): void;
 
   //--------------------------------------------------------------------------------------------------------------------
 }
