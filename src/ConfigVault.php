@@ -12,38 +12,126 @@ interface ConfigVault
 {
   //--------------------------------------------------------------------------------------------------------------------
   /**
-   * Returns the value stored under a key in a domain or all key-value pairs as an associative array in a domain.
+   * Returns a boolean stored under a key in a domain.
    *
-   * @param string      $domain The name of the domain.
-   * @param string|null $key    The key. If null all key-value pairs in the domain are returned.
+   * @param string $domain The name of the domain.
+   * @param string $key    The key
    *
-   * @return mixed
+   * @return bool
    */
-  public function getValue(string $domain, ?string $key = null);
+  public function getBool(string $domain, string $key): ?bool;
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
-   * Stores a value under a key in a domain or replaces all key-value pairs in a domain with key-value pairs given as an
-   * associative array.
+   * Returns all key-value pairs as an associative array in a domain.
    *
-   * @param string      $domain The name of the domain.
-   * @param string|null $key    The key. If null the value must be an associative array.
-   * @param mixed       $value  The value.
+   * @param string $domain The name of the domain.
    *
-   * @return void
+   * @return array
    */
-  public function putValue(string $domain, ?string $key, $value): void;
+  public function getDomain(string $domain): array;
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
-   * Removes a key from a domain or removes a whole domain.
+   * Returns a float stored under a key in a domain.
    *
-   * @param string      $domain The name of the domain.
-   * @param string|null $key    The key. If null a whole domain will be removed.
+   * @param string $domain The name of the domain.
+   * @param string $key    The key
+   *
+   * @return float
+   */
+  public function getFloat(string $domain, string $key): ?float;
+
+  //--------------------------------------------------------------------------------------------------------------------
+  /**
+   * Returns an integer stored under a key in a domain.
+   *
+   * @param string $domain The name of the domain.
+   * @param string $key    The key
+   *
+   * @return int
+   */
+  public function getInt(string $domain, string $key): ?int;
+
+  //--------------------------------------------------------------------------------------------------------------------
+  /**
+   * Returns a string stored under a key in a domain.
+   *
+   * @param string $domain The name of the domain.
+   * @param string $key    The key
+   *
+   * @return string
+   */
+  public function getString(string $domain, string $key): ?string;
+
+  //--------------------------------------------------------------------------------------------------------------------
+  /**
+   * Stores a boolean under a key in a domain.
+   *
+   * @param string    $domain The name of the domain.
+   * @param string    $key    The key under which the integer must be stored.
+   * @param bool|null $value  The value.
    *
    * @return void
    */
-  public function unset(string $domain, ?string $key = null): void;
+  public function putBool(string $domain, string $key, ?bool $value): void;
+
+  //--------------------------------------------------------------------------------------------------------------------
+  /**
+   * Stores a float under a key in a domain.
+   *
+   * @param string     $domain The name of the domain.
+   * @param string     $key    The key under which the integer must be stored.
+   * @param float|null $value  The value.
+   *
+   * @return void
+   */
+  public function putFloat(string $domain, string $key, ?float $value): void;
+
+  //--------------------------------------------------------------------------------------------------------------------
+  /**
+   * Stores an integer under a key in a domain.
+   *
+   * @param string   $domain The name of the domain.
+   * @param string   $key    The key under which the integer must be stored.
+   * @param int|null $value  The value.
+   *
+   * @return void
+   */
+  public function putInt(string $domain, string $key, ?int $value): void;
+
+  //--------------------------------------------------------------------------------------------------------------------
+  /**
+   * Stores a string under a key in a domain.
+   *
+   * @param string      $domain The name of the domain.
+   * @param string      $key    The key under which the integer must be stored.
+   * @param string|null $value  The value.
+   *
+   * @return void
+   */
+  public function putString(string $domain, string $key, ?string $value): void;
+
+  //--------------------------------------------------------------------------------------------------------------------
+  /**
+   * Removes a whole domain.
+   *
+   * @param string $domain The name of the domain.
+   *
+   * @return void
+   */
+  public function unsetDomain(string $domain): void;
+
+  //--------------------------------------------------------------------------------------------------------------------
+  /**
+   * Removes a key from a domain
+   *
+   * @param string $domain The name of the domain.
+   * @param string $key    The key.
+   *
+   * @return void
+   */
+  public function unsetKey(string $domain, string $key): void;
 
   //--------------------------------------------------------------------------------------------------------------------
 }
