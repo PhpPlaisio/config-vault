@@ -1,19 +1,18 @@
 {
-  "name": "setbased/abc-config-vault",
-  "description": "ABC-Framework: Config Vault",
+  "name": "plaisio/config-vault",
+  "description": "PhpPlaisio: Config Vault",
   "keywords": [
-    "ABC-Framework",
+    "PhpPlaisio",
     "Config",
     "Vault"
   ],
-  "type": "library",
   "license": "MIT",
   "require": {
     "php": ">=7.1.0"
   },
   "autoload": {
     "psr-4": {
-      "SetBased\\Abc\\ConfigVault\\": "src/"
+      "Plaisio\\ConfigVault\\": "src/"
     }
   }
 }
