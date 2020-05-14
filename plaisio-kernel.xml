@@ -1,0 +1,9 @@
+<kernel>
+    <properties>
+        <property>
+            <type>\Plaisio\ConfigVault\ConfigVault</type>
+            <name>configVault</name>
+            <description>The configuration vault for storing and retrieving sensitive configuration data safely.</description>
+        </property>
+    </properties>
+</kernel>
