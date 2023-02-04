@@ -18,7 +18,7 @@ interface ConfigVault
    * @param string $domain The name of the domain.
    * @param string $key    The key
    *
-   * @return bool
+   * @return bool|null
    */
   public function getBool(string $domain, string $key): ?bool;
 
@@ -39,7 +39,7 @@ interface ConfigVault
    * @param string $domain The name of the domain.
    * @param string $key    The key
    *
-   * @return float
+   * @return float|null
    */
   public function getFloat(string $domain, string $key): ?float;
 
@@ -50,7 +50,7 @@ interface ConfigVault
    * @param string $domain The name of the domain.
    * @param string $key    The key
    *
-   * @return int
+   * @return int|null
    */
   public function getInt(string $domain, string $key): ?int;
 
@@ -61,7 +61,7 @@ interface ConfigVault
    * @param string $domain The name of the domain.
    * @param string $key    The key
    *
-   * @return string
+   * @return string|null
    */
   public function getString(string $domain, string $key): ?string;
 
